@@ -1,11 +1,22 @@
-def bubble_sort(arr):
+from utils.pause_timer import PauseTimer
+
+def bubble_sort(arr, timer: PauseTimer):
+    """
+    Burbuja con pausas e interrupciones evolutivas.
+    Complejidad O(n^2).
+    """
     n = len(arr)
+    # VIDEO: Analogía de muchas personas en fila que caminan hasta ordenarse
     for i in range(n):
-        swapped = False  # para optimizar si ya está ordenado
-        for j in range(0, n - i - 1):
+        swapped = False
+        for j in range(n - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
+            if timer.tick():
+                return arr
         if not swapped:
-            break  # el array ya está ordenado
+            break
+        if timer.tick():
+            return arr
     return arr

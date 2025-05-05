@@ -1,11 +1,6 @@
-def binary_search(arr, target):
-    left, right = 0, len(arr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if arr[mid] == target:
-            return True
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return False
+import bisect
+
+def binary_search_index(sorted_arr, value):
+    """Devuelve índice si value está en sorted_arr, -1 en caso contrario."""
+    i = bisect.bisect_left(sorted_arr, value)
+    return i if i < len(sorted_arr) and sorted_arr[i] == value else -1
