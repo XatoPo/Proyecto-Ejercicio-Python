@@ -15,11 +15,9 @@ def merge_sort(arr, timer: PauseTimer):
             i, j, k = left, mid, left
             while i < mid and j < right:
                 if arr[i] <= arr[j]:
-                    aux[k] = arr[i]
-                    i += 1
+                    aux[k] = arr[i]; i += 1
                 else:
-                    aux[k] = arr[j]
-                    j += 1
+                    aux[k] = arr[j]; j += 1
                 k += 1
             while i < mid:
                 aux[k] = arr[i]; i += 1; k += 1

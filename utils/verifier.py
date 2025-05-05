@@ -2,11 +2,11 @@ from .binary_search import binary_search_index
 
 class Verifier:
     """
-    Cuenta cuántos elementos están en su posición final correcta
-    comparando con el arreglo totalmente ordenado.
+    Cuenta cuántos elementos están en posición correcta
+    comparando con arreglo fully sorted.
     """
-    def __init__(self, original_arr):
-        self.sorted = sorted(original_arr)
+    def __init__(self, original):
+        self.sorted = sorted(original)
 
     def count_correct(self, arr_partial):
         count = 0

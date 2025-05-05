@@ -6,12 +6,12 @@ def bubble_sort(arr, timer: PauseTimer):
     Complejidad O(n^2).
     """
     n = len(arr)
-    # VIDEO: Analogía de muchas personas en fila que caminan hasta ordenarse
+    # VIDEO: Analogía de personas en fila
     for i in range(n):
         swapped = False
         for j in range(n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
                 swapped = True
             if timer.tick():
                 return arr

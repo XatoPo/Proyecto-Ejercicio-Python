@@ -5,7 +5,7 @@ def quick_sort(arr, timer: PauseTimer):
     Quick Sort iterativo con pausas e interrupciones.
     Complejidad promedio O(n log n).
     """
-    stack = [(0, len(arr) - 1)]
+    stack = [(0, len(arr)-1)]
     while stack:
         lo, hi = stack.pop()
         if lo < hi:
@@ -18,8 +18,8 @@ def quick_sort(arr, timer: PauseTimer):
                 if timer.tick():
                     return arr
             arr[i], arr[hi] = arr[hi], arr[i]
-            stack.append((lo, i - 1))
-            stack.append((i + 1, hi))
+            stack.append((lo, i-1))
+            stack.append((i+1, hi))
         if timer.tick():
             break
     return arr
